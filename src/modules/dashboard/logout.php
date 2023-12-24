@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="../../css/button.css">
-    <link rel="stylesheet" href="../../css/walkmandashboard.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
 </head>
 <body>
     <section class="logout">

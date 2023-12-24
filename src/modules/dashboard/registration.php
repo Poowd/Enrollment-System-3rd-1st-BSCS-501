@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="../css/walkmandashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
     <h1>Register</h1>

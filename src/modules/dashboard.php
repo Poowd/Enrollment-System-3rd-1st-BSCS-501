@@ -48,28 +48,28 @@
             {
                 switch ($_POST['someAction']) {
                     case 'registration':
-                        include './walkmanDashboard/registration.php';
+                        include './dashboard/registration.php';
                         break;
                     case 'enrollment':
-                        include './walkmanDashboard/enrollment.php';
+                        include './dashboard/enrollment.php';
                         break;
                     case 'profile':
-                        include './walkmanDashboard/profile.php';
+                        include './dashboard/profile.php';
                         break;
                     case 'viewlist':
-                        include './walkmanDashboard/viewlist.php';
+                        include './dashboard/viewlist.php';
                         break;
                     case 'policy':
-                        include './walkmanDashboard/policy.php';
+                        include './dashboard/policy.php';
                         break;
                     case 'help':
-                        include './walkmanDashboard/help.php';
+                        include './dashboard/help.php';
                         break;
                     case 'logout':
-                        include './walkmanDashboard/logout.php';
+                        include './dashboard/logout.php';
                         break;
                     default:
-                        include './walkmanDashboard/home.php';
+                        include './dashboard/home.php';
                         break;
 
                 }

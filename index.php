@@ -19,7 +19,7 @@
             <i class="pwd-snd-button">=</i>
         </label>
         <div class="logo">
-            <h1>Luv U</h1>
+            <h1>DCERU</h1>
         </div>
         <ul class="navlist">
             <?php foreach ($_navbar1 as $navbar1_item) : ?>

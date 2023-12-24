@@ -14,7 +14,7 @@
         <section class="center">
             <section class="login">
                 <img src="../assets/imgs/background/bg1.jpeg" alt="" class="icon-s">
-                <h3 class="title">Duck Cover <span>En Roll na!</span> please</h3>
+                <h3 class="title">Duck Cover <span>En Roll University</span> Portal</h3>
                 <form action="./dashboard.php">
                     <label for="email">Email Address:</label>
                         <input type= "text" name="email" required><br>
