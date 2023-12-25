@@ -3,8 +3,8 @@
         ['title' => 'Dashboard', 
          'value' => 'dashboard',],
 
-        ['title' => 'Registration', 
-         'value' => 'registration',],
+        ['title' => 'Application', 
+         'value' => 'application',],
 
         ['title' => 'Enrollment', 
          'value' => 'enrollment',],

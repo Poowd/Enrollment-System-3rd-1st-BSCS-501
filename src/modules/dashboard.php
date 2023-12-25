@@ -40,41 +40,43 @@
         </aside>
         <main class="content1">
             <?php
-            if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
-            {
-                walkmanDashboard();
-            }
-            function walkmanDashboard()
-            {
-                switch ($_POST['someAction']) {
-                    case 'registration':
-                        include './dashboard/registration.php';
-                        break;
-                    case 'enrollment':
-                        include './dashboard/enrollment.php';
-                        break;
-                    case 'profile':
-                        include './dashboard/profile.php';
-                        break;
-                    case 'viewlist':
-                        include './dashboard/viewlist.php';
-                        break;
-                    case 'policy':
-                        include './dashboard/policy.php';
-                        break;
-                    case 'help':
-                        include './dashboard/help.php';
-                        break;
-                    case 'logout':
-                        include './dashboard/logout.php';
-                        break;
-                    default:
-                        include './dashboard/home.php';
-                        break;
-
+                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
+                {
+                    walkmanDashboard();
+                } else {
+                    echo 'hotdog';
                 }
-            }
-        ?>
+                function walkmanDashboard()
+                {
+                    switch ($_POST['someAction']) {
+                        case 'application':
+                            include './dashboard/application.php';
+                            break;
+                        case 'enrollment':
+                            include './dashboard/enrollment.php';
+                            break;
+                        case 'profile':
+                            include './dashboard/profile.php';
+                            break;
+                        case 'viewlist':
+                            include './dashboard/viewlist.php';
+                            break;
+                        case 'policy':
+                            include './dashboard/policy.php';
+                            break;
+                        case 'help':
+                            include './dashboard/help.php';
+                            break;
+                        case 'logout':
+                            include './dashboard/logout.php';
+                            break;
+                        default:
+                            include './dashboard/home.php';
+                            break;
+
+                    }
+                }
+            ?>
         </main>
     </div>
         
