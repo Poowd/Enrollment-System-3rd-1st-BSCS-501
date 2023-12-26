@@ -43,8 +43,35 @@
                 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
                 {
                     walkmanDashboard();
+                    // echo "
+                    //     <dialog open>
+                    //     <p>Greetings, one and all!</p>
+                    //     <form method=\"dialog\">
+                    //     <button>OK</button>
+                    //     </form>
+                    //     </dialog>
+                    //     ";
                 } else {
-                    echo 'hotdog';
+                    echo 'hodtdog';
+                    include '../data/mysql-connection.php';
+                    //read all row from database table
+                    $sql = "SELECT * FROM student_profile";
+                    $result = $connection->query($sql);
+                        if (!$result) {
+                            die("Invalid query: ". $connection->error);
+                        }
+                    //read data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "
+                            <tr>
+                                <td>$row[firstname]</td>
+                                <td>
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </td>
+                            </tr>
+                        ";
+                    }
                 }
                 function walkmanDashboard()
                 {

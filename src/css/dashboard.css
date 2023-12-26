@@ -1,21 +1,18 @@
-.application form,
-.enrollment form {
+form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-.application td,
-.enrollment td {
+td {
     padding: 1rem 2rem;
 }
-.application label,
-.enrollment label {
+label {
     display: block;
     margin-bottom: .25rem;
     font-size: min(4vw, 8pt);
 }
-.application input, .application select,
-.enrollment input, .enrollment select {
+select, input {
     width: 100%;
     padding: .5rem;
     border-radius: .5rem;
@@ -23,8 +20,7 @@
 }
 
 @media (width < 760px) {
-    .application tr,
-    .enrollment tr {
+    tr {
         display: flex;
         flex-direction: column;
     }

@@ -3,11 +3,11 @@
 </head>
 <body>
     <h1>Application</h1>
-    <form action="../modules/dashboard.php" method="POST" class="application">
+    <form action="" method="POST" class="application">
         <?php include '../data/dashboard-data.php';?>
         <table>
             <tr>
-                <td>
+                <td colspan="3">
                     <label for="program">Program</label>
                     <select name="program" id="program">
                         <?php foreach ($_program as $program_item) : ?>
@@ -19,23 +19,23 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td  colspan="2">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName">
+                    <input type="text" id="firstName" name="firstName">
                 </td>
                 <td>
                     <label for="dateOfBirth">Date of Birth</label>
-                    <input type="date" id="dateOfBirth">
+                    <input type="date" id="dateOfBirth" name="dateOfBirth">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="middleInitial">Middle Initial</label>
-                    <input type="text" id="middleInitial">
+                    <input type="text" id="middleInitial" name="middleInitial">
                 </td>
                 <td>
                     <label for="birthPlace">Birthplace</label>
-                    <input type="text" id="birthPlace">
+                    <input type="text" id="birthPlace" name="birthPlace">
                 </td>
                 <td>
                     <label for="citizenship">Citizenship</label>
@@ -51,7 +51,7 @@
             <tr>
                 <td td>
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName">
+                    <input type="text" id="lastName" name="lastName">
                 </td>
                 <td>
                     <label for="civilStatus">Civil Status</label>
@@ -72,61 +72,66 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <label for="address1">House/Lot/Unit No.</label>
-                    <input type="text" id="address1">
-                </td>
-                <td>
-                    <label for="address2">Street</label>
-                    <input type="text" id="address2">
-                </td>
-                <td>
-                    <label for="address3">Building/Subdivision/Village/Barangay</label>
-                    <input type="text" id="address3">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="address4">City/Municipality</label>
-                    <select name="address4" id="address4">
-                        <?php foreach ($_address4 as $address4_item) : ?>
-                            <option value="<?php echo $address4_item['code']; ?>">
-                                <?php echo $address4_item['address4']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </td>
-                <td>
-                    <label for="address5">Province</label>
-                    <select name="address5" id="address5">
-                        <?php foreach ($_address5 as $address5_item) : ?>
-                            <option value="<?php echo $address5_item['code']; ?>">
-                                <?php echo $address5_item['address5']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </td>
-                <td>
-                    <label for="address6">Zip Code</label>
-                    <input type="text" id="address6">
+                <td  colspan="3">
+                    <label for="myaddress">Address</label>
+                    <input type="text" id="myaddress" name="myaddress">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="mobileNumber">Mobile Number:</label>
-                    <input type="text" id="mobileNumber">
+                    <input type="text" id="mobileNumber" name="mobileNumber">
                 </td>
-                <td>
+                <td  colspan="2">
                     <label for="eMail">Email:</label>
-                    <input type="email" id="eMail">
+                    <input type="email" id="eMail" name="eMail">
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input type="submit" name="submit" id="submit" class="btn1">
+                <td colspan="3">
+                    <button type="submit" name="createstudent" id="submit" class="btn1">Submit</button>
                 </td>
             </tr>
         </table>
-        
     </form>
+
+    <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "enrollment_system";
+    
+        //create connection
+            $connection = new mysqli($servername, $username, $password, $database);
+        //check connection 
+            if ($connection->connect_error) {
+                die("Connection failed: ". $connection->connect_error);
+            }
+
+            if(isset($_POST['createstudent'])) { 
+                if(isset($_POST['firstName'])){
+                    $FirstName = $_POST['firstName'];
+                    $MiddleName = $_POST['middleInitial'];
+                    $LastName = $_POST['lastName'];
+                    $Program = filter_input(INPUT_POST, 'program');
+                    $Sex = $_POST['sex'];
+                    $Citizenship = filter_input(INPUT_POST, 'citizenship');
+                    $CivilStatus = $_POST['civilStatus'];
+                    $DateofBirth = $_POST['dateOfBirth'];
+                    $BirthPlace = $_POST['birthPlace'];
+                    $MobileNumber = $_POST['mobileNumber'];
+                    $Email = $_POST['eMail'];
+                    $MyAddress = $_POST['myaddress'];
+                    //read all row from database table
+                    $createstudent = "INSERT INTO student_profile VALUES
+                            ('', '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress');";
+                    $result = mysqli_query($connection, $createstudent);
+                        if (!$result) {
+                            die("Invalid query: ". $connection->error);
+                    }
+                }
+            
+            }
+        
+    ?>
 </body>

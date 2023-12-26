@@ -7,6 +7,12 @@
         <table>
             <tr>
                 <td>
+                    <label for="id">ID:</label>
+                    <input type="text" id="id">
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <label for="program">Program</label>
                     <select name="program" id="program">
                         <option value=""></option>
