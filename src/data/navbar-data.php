@@ -14,11 +14,13 @@
 <?php 
     $_navbar2 = [
         ['title' => 'Dashboard', 
-         'link' => '#',],
+         'link' => './dashboard.php',],
+        ['title' => 'Application', 
+         'link' => './application.php',],
         ['title' => 'Registration', 
          'link' => '#',],
-        ['title' => 'View List', 
-         'link' => '#',],
+        ['title' => 'Student List', 
+         'link' => './studentlist.php',],
         ['title' => 'Policy', 
          'link' => '#',],
          ['title' => 'Help', 

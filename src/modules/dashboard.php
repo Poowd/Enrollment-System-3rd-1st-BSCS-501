@@ -28,82 +28,8 @@
         </ul>
     </nav>
     <div class="dashboard1">
-        <?php include '../data/sidebar-data.php';?>
-        <aside class="sidebar1">
-            <ul class="sidebar-list">
-                <?php foreach ($_sidebar1 as $sidebar1_item) : ?>
-                    <form action="" method="POST">
-                    <button name="someAction" value="<?php echo $sidebar1_item['value']; ?>" class="btn5" ><li class="sidebar-item"><?php echo $sidebar1_item['title']; ?></li></button>
-                    </form>
-                <?php endforeach; ?>
-            </ul>
-        </aside>
         <main class="content1">
-            <?php
-                if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
-                {
-                    walkmanDashboard();
-                    // echo "
-                    //     <dialog open>
-                    //     <p>Greetings, one and all!</p>
-                    //     <form method=\"dialog\">
-                    //     <button>OK</button>
-                    //     </form>
-                    //     </dialog>
-                    //     ";
-                } else {
-                    echo 'hodtdog';
-                    include '../data/mysql-connection.php';
-                    //read all row from database table
-                    $sql = "SELECT * FROM student_profile";
-                    $result = $connection->query($sql);
-                        if (!$result) {
-                            die("Invalid query: ". $connection->error);
-                        }
-                    //read data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "
-                            <tr>
-                                <td>$row[firstname]</td>
-                                <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                        ";
-                    }
-                }
-                function walkmanDashboard()
-                {
-                    switch ($_POST['someAction']) {
-                        case 'application':
-                            include './dashboard/application.php';
-                            break;
-                        case 'enrollment':
-                            include './dashboard/enrollment.php';
-                            break;
-                        case 'profile':
-                            include './dashboard/profile.php';
-                            break;
-                        case 'viewlist':
-                            include './dashboard/viewlist.php';
-                            break;
-                        case 'policy':
-                            include './dashboard/policy.php';
-                            break;
-                        case 'help':
-                            include './dashboard/help.php';
-                            break;
-                        case 'logout':
-                            include './dashboard/logout.php';
-                            break;
-                        default:
-                            include './dashboard/home.php';
-                            break;
-
-                    }
-                }
-            ?>
+                
         </main>
     </div>
         

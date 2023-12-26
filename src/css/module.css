@@ -116,12 +116,6 @@
     display: flex;
     padding: 1rem 15vw;
 }
-.dashboard1 .sidebar1 {
-    flex: 20%;
-}
-.dashboard1 .content1 {
-    flex: 80%;
-}
 .dashboard1 .sidebar-list {
     list-style: none;
 }

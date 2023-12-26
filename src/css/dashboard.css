@@ -1,3 +1,6 @@
+.application {
+    padding: 0 15vw;
+}
 form {
     width: 100%;
     display: flex;
