@@ -57,10 +57,7 @@
                     include '../data/mysql-connection.php';
                     //read all row from database table
                     $sql = "SELECT * FROM student_profile";
-                    $result = $mysqli->query($sql);
-                        if (!$result) {
-                            die("Invalid query: ". $connection->error);
-                    }
+                    $mysqli->query($sql) or die("Invalid query: ". $connection->error);
                 ?>
                         
                 <?php
@@ -80,12 +77,11 @@
                                 <td><?php echo $row['myaddress'] ?></td>
                                 <td class="list-actions">
                                     <div>
-                                        <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Edit</a>
+                                        <a href="?edit=<?php echo $row['id']; ?>" class="btn1">Edit</a>
                                         <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Delete</a>
                                     </div>
                                 </td>
                             </tr>
-
                     <?php endwhile ?>
             </tbody>
         </table>
