@@ -17,8 +17,6 @@
          'link' => './dashboard.php',],
         ['title' => 'Application', 
          'link' => './application.php',],
-        ['title' => 'Registration', 
-         'link' => '#',],
         ['title' => 'Student List', 
          'link' => './studentlist.php',],
         ['title' => 'Policy', 

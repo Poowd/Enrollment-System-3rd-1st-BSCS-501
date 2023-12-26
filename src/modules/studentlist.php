@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="../css/alert.css">
 </head>
 <body>
-    <?php require_once '../process/create-student.php' ?>
-        
+    <?php require_once '../process/action.php'; ?>
     <nav class="navbar2">
         <?php include '../data/navbar-data.php';?>
         <input type="checkbox" id="toggle">
@@ -32,14 +31,24 @@
         </ul>
     </nav>
     <br>
-    <section class="application">
+    <section class="studentlist1">
+        <h1>Student List</h1>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>School Year</th>
-                    <th>Semester</th>
-                    <th>Created At</th>
+                    <th>Name</th>
+                    <th>Program</th>
+                    <th>Sex</th>
+
+                    <th>Citizenship</th>
+                    <th>Civil Status</th>
+                    <th>Date of Birth</th>
+                    <th>Birth Place</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -55,14 +64,24 @@
                 ?>
                         
                 <?php
-                    include '../process/create-student.php';
                     while ($row = $result->fetch_assoc()):?>
 
                             <tr>
                                 <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['lastname'], ', ', $row['firstname'], ' ', $row['middleinitial'] ?></td>
+                                <td><?php echo $row['program'] ?></td>
+                                <td><?php echo $row['sex'] ?></td>
+                                <td><?php echo $row['citizenship'] ?></td>
+                                <td><?php echo $row['civilstatus'] ?></td>
+                                <td><?php echo $row['dateofbirth'] ?></td>
+                                <td><?php echo $row['placeofbirth'] ?></td>
+                                <td><?php echo $row['mobilenumber'] ?></td>
+                                <td><?php echo $row['email'] ?></td>
+                                <td><?php echo $row['myaddress'] ?></td>
                                 <td class="list-actions">
                                     <div>
-                                        <a href="?deletestudent=<?php echo $row['id']; ?>" class="btn1">Delete</a>
+                                        <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Edit</a>
+                                        <a href="?delete=<?php echo $row['id']; ?>" class="btn1">Delete</a>
                                     </div>
                                 </td>
                             </tr>

@@ -138,3 +138,22 @@
         display: none;
     }
 }
+
+.studentlist1 {
+    padding: 0 15vw;
+}
+.studentlist1 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.studentlist1 td,
+.studentlist1 th {
+    padding: .5rem .25rem;
+    border: black 1px solid;
+    text-align: center;
+}
+.studentlist1 .list-actions div {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}

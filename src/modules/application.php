@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="../css/alert.css">
 </head>
 <body>
-    <?php require_once '../process/create-student.php' ?>
-        
+    <?php require_once '../process/action.php' ?>
     <nav class="navbar2">
         <?php include '../data/navbar-data.php';?>
         <input type="checkbox" id="toggle">
@@ -120,7 +119,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <button type="submit" name="createstudent" id="submit" class="btn1">Submit</button>
+                        <button type="submit" name="save" id="submit" class="btn1">Submit</button>
                     </td>
                 </tr>
             </table>

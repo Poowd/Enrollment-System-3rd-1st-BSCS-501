@@ -1,6 +1,6 @@
 <?php 
     include '../data/mysql-connection.php';
-    if(isset($_POST['createstudent'])) { 
+    if(isset($_POST['save'])) { 
         
         $FirstName = $_POST['firstName'];
         $MiddleName = $_POST['middleInitial'];
@@ -21,12 +21,16 @@
         //read all row from database table
             $mysqli->query("INSERT INTO student_profile (id, firstname, middleinitial, lastname, program, sex, citizenship, civilstatus, dateofbirth, placeofbirth, mobilenumber, email, myaddress) VALUES ('0', '$FirstName', '$MiddleName', '$LastName', '$Program', '$Sex', '$Citizenship', '$CivilStatus', '$DateofBirth', '$BirthPlace', '$MobileNumber', '$Email', '$MyAddress')") or die("Connection failed:");
                 $mysqli -> close();
+
+        header("Refresh:0; url=../modules/dashboard.php");
                 
 
     }
-    if(isset($_GET['deletestudent'])) {
-        $id = $_GET['deletestudent'];
+    if(isset($_GET['delete'])) {
+        $id = $_GET['delete'];
 
             $mysqli->query("DELETE FROM student_profile WHERE id='$id'") or die("Connection failed:");
                 $mysqli -> close();
+            
+        header("Refresh:0; url=../modules/studentlist.php");
     }
